@@ -5,3 +5,4 @@ https://www.atlassian.com/ru/git/tutorials/saving-changes/gitignore#git-ignor$
 
 build_*/
 .DS_Store
+lib/

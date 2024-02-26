@@ -1,24 +1,26 @@
-@echo off
+#!/bin/bash
 
-:: Вид сборки / суффикс в названии каталога сборки
-::
-:: "Ninja" / "ninja"
-:: "Visual Studio 17 2022" / "visual_studio"
-::
-set BUILD_TYPE=Ninja
-set BUILD_SUFFIX=ninja
+BUILD_TYPE="Ninja"
+BUILD_SUFFIX="ninja"
 
-chcp 65001
+BUILD_FOLDER="build_$BUILD_SUFFIX"
+SOURCE_FOLDER="projects"
 
-set BUILD_FOLDER=build_%BUILD_SUFFIX%
-set SOURCE_FOLDER=projects
+if [ ! -d "$BUILD_FOLDER" ]; then
+    mkdir "$BUILD_FOLDER"
+fi
 
-if not exist %BUILD_FOLDER% mkdir %BUILD_FOLDER%
+cd "$BUILD_FOLDER" || exit
 
-cd %BUILD_FOLDER%
-
-cmake -G %BUILD_TYPE% ..\%SOURCE_FOLDER%
+cmake -G "$BUILD_TYPE" "../$SOURCE_FOLDER"
 cmake --build .
 
-copy ..\%SOURCE_FOLDER%\bubble_sort\run_bubble_sort.bat .\bubble_sort
-copy ..\%SOURCE_FOLDER%\bubble_sort_mf\run_bubble_sort_mf.bat .\bubble_sort_mf
+arr=("refactoring_and_print" "base_theory_p1" "base_theory_tasks_p1" "obuchaika")
+
+files=("run_refactoring_and_print.sh" "run_base_theory_p1.sh" "run_base_theory_tasks_p1.sh" "run_obuchaika.sh")
+
+for i in {0..3}; do
+    cp "../$SOURCE_FOLDER/${arr[$i]}/${files[$i]}" "./${arr[$i]}"
+done
+
+cp "../run_tests.sh" .
