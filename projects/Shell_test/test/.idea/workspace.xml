@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0bff40d-f6c4-418a-945f-49b545d1c52f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Shell_sort/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Shell_sort/shel_sort.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Shell_sort/shel_sort.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit_test_shell/src/shel_sort.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit_test_shell/src/shel_sort.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
